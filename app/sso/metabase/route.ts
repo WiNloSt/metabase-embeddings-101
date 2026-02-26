@@ -5,7 +5,7 @@ export async function GET(request: NextRequest) {
   let id: string = ''
   let exp: number = 0
   const token = request.cookies.get('metabase.TOKEN')
-  const response = await fetch(`http://localhost:3000/auth/sso?jwt=${token.value}&token=true`)
+  const response = await fetch(`http://localhost:3000/auth/sso?jwt=${token?.value}&token=true`)
   const responseJson = await response.json()
   if (responseJson) {
     id = responseJson.id

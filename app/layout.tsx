@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.className}`}>
         <div className="flex flex-col min-h-screen">
           <NavBar />
-          <div className="flex-auto h-0">{children}</div>
+          <div className="flex-auto">{children}</div>
         </div>
       </body>
     </html>
@@ -37,11 +37,16 @@ function NavBar() {
             <NavButton>Interactive Embedding</NavButton>
           </Link>
         </li>
+        <li>
+          <Link href="sdk">
+            <NavButton>Embedding SDK</NavButton>
+          </Link>
+        </li>
       </ul>
     </nav>
   )
 }
 
-function NavButton({ children }) {
+function NavButton({ children }: { children: React.ReactNode }) {
   return <button className="px-5 py-2 bg-neutral-300 rounded-xl">{children}</button>
 }
